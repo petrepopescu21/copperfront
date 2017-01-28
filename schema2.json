@@ -1,0 +1,41 @@
+{
+    "meta" : {
+        "name" : "gallery",
+        "_id" : 123
+    },
+
+    "fields" : {
+        "title" : {
+            "meta" : {
+                "data_type" : "string",
+                "required" : true
+            }
+        },
+        "images" : {
+            "meta" : {
+                "data_type" : "array",
+                "required" : true
+            },
+            "schema" : {
+                "imageUrl" : {
+                    "meta" : {
+                        "data_type" : "string",
+                        "required" : true
+                    }
+                },
+                "description" : {
+                    "meta" : {
+                        "data_type" : "string",
+                        "required" : false
+                    }
+                },
+                "target" : {
+                    "meta" : {
+                        "data_type" : "string",
+                        "required" : false
+                    }
+                }
+            }
+        }
+    }
+}
