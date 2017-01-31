@@ -1,0 +1,33 @@
+{
+	"title": "User",
+	"type": "object",
+	"properties": {
+		"firstName": {
+			"type": "string"
+		},
+		"lastName": {
+            "translatable" : true,
+			"type": "string"
+		},
+        "photo" : {
+            "type": "object",
+            "translatable": true,
+            "properties": {
+                "path": {
+                    "type": "string"
+                },
+                "size": {
+                    "type":"number"
+                    }
+            },
+            "required" : ["path"]
+        },
+		"age": {
+			"description": "Age in years",
+			"type": "integer",
+			"minimum": 0
+		}
+	},
+    "required" : ["firstName","lastName"],
+    "additionalProperties" : false
+}

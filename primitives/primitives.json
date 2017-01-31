@@ -1,0 +1,20 @@
+{
+    "image" : {
+        "path" : {
+            "type" : "string",
+            "required" : "true"
+            },
+        "thumb" : {
+            "type" : "string",
+            "required" : "false"
+            },
+        "description" : {
+            "type" : "string",
+            "required" : "false"
+            }
+    },
+    "gps" : {
+        "lat" : "number",
+        "long" : "number"
+    }
+}   
