@@ -5,8 +5,11 @@
   "main": "test.js",
   "dependencies": {
     "ajv": "^5.0.1-beta.2",
+    "body-parser": "^1.16.0",
     "express": "^4.14.1",
     "http": "0.0.0",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.22",
     "traverse": "^0.6.6"
   },
   "devDependencies": {},

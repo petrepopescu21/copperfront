@@ -14,8 +14,16 @@ function Validator(obj) {
 
 Validator.prototype.compile = function(schema) {
     schema = convert_translatable(schema);
-    this.compiled_schema = ajv.compile(schema);
-    return this;
+    
+    try {
+        this.compiled_schema = ajv.compile(schema);
+        console.log(this);
+        return this;
+    }
+    catch (err){
+        return err;
+    }
+    
 }
 
 Validator.prototype.validate = function(data) {
