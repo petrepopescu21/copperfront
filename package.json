@@ -5,6 +5,8 @@
   "main": "test.js",
   "dependencies": {
     "ajv": "^5.0.1-beta.2",
+    "express": "^4.14.1",
+    "http": "0.0.0",
     "traverse": "^0.6.6"
   },
   "devDependencies": {},

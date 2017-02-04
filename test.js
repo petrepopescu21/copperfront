@@ -6,4 +6,5 @@ var Validator = require('./validator/validator.js');
 var userValidator = Validator("User").compile(schema);
 var result = userValidator.validate(data);
 
-console.log(result);
+console.log(JSON.stringify(userValidator.compiled_schema.schema));
+//console.log(result);
