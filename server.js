@@ -13,7 +13,7 @@ require('./config/models').init(app,Models);
 
 if (!module.parent) {
   server = http.createServer(app);
-  server.listen(config.port || 3000, config.hostname, () => {
+  server.listen(config.port || 80, config.hostname, () => {
     let addr = server.address();
     // console.info('---');
     // console.info('%s is running.', config.app.name);
