@@ -13,17 +13,7 @@ require('./config/models').init(app,Models);
 
 if (!module.parent) {
   server = http.createServer(app);
-  server.listen(config.port || 80, config.hostname, () => {
-    let addr = server.address();
-    // console.info('---');
-    // console.info('%s is running.', config.app.name);
-    // console.info('Hostname: %s', addr.address);
-    // console.info('Port: %s', addr.port);
-    // console.info('Environment: %s', ENV.toLowerCase());
-    // console.info('Access: %s', config.baseUrl);
-    //console.info('---');
-    
-  });
+  server.listen(80);
 }
 
 module.exports = app;
