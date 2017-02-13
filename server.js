@@ -11,7 +11,7 @@ require('./config/express').init(app);
 require('./config/routes').init(app);
 require('./config/models').init(app,Models);
 
-if (!module.parent) {
+if (!module.parent) { 
   server = http.createServer(app);
   server.listen(config.port || 3000, config.hostname, () => {
     let addr = server.address();
