@@ -1,35 +1,32 @@
 var DBHelper = require(".\DBHelper.js");
-var MongoClient = require('mongodb').MongoClient
+////var MongoClient = require('mongodb').MongoClient
 
-var connURL = "mongodb://admin:test1234@ds056789.mlab.com:56789/copperfront";
+//var connURL = "mongodb://admin:test1234@ds056789.mlab.com:56789/copperfront";
 
 // in the connection URL there should be some sort of customer ID/TOKEN
 // ASSUMING "SCHEMAS" and "OBJECTS" are the collection names
 
+var MongoClient = require("../../config/mongo.js");
+
 
 
 function InsertObject(pObject, pObjectType) {
-    MongoClient.connect(connURL, function (err, db) {
-        console.log("Connected correctly to server");
-        console.log("error " + err);
+   MongoClient.then( function(db) {
         DBHelper.insertDocuments(db, pObjectType, pObject, function () {
-            db.close();
         });
     });
 }
-function GetSchema(pFilter,pObjectType, pCallback)
+function GetObject(pFilter,pObjectType, pCallback)
 {
-     MongoClient.connect(connURL, function (err, db) {
-        console.log("Connected correctly to server");
-        console.log("error " + err);
+     MongoClient.then( function(db) {
         DBHelper.findDocuments(db, pObjectType, pFilter, function (data) {
-            db.close();
             pCallback(data);
         });
     });
 }
 
 module.exports.InsertObject=InsertObject;
+module.exports.GetObject=GetObject;
 
 
 

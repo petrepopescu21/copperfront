@@ -9,4 +9,5 @@ const rootMid = require('../middleware/root.js');
 
 //router.get('/',rootMid.ex,schema.put);
 router.put('/schema',schema.put);
+router.get('/schema/:name',schema.get);
 module.exports = router;
