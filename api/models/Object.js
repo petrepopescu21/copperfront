@@ -8,16 +8,26 @@ var connURL = "mongodb://admin:test1234@ds056789.mlab.com:56789/copperfront";
 
 
 
-function InsertObject(pObject) {
+function InsertObject(pObject, pObjectType) {
     MongoClient.connect(connURL, function (err, db) {
         console.log("Connected correctly to server");
         console.log("error " + err);
-        DBHelper.insertDocuments(db, "OBJECTS", pObject, function () {
+        DBHelper.insertDocuments(db, pObjectType, pObject, function () {
             db.close();
         });
     });
 }
-
+function GetSchema(pFilter,pObjectType, pCallback)
+{
+     MongoClient.connect(connURL, function (err, db) {
+        console.log("Connected correctly to server");
+        console.log("error " + err);
+        DBHelper.findDocuments(db, pObjectType, pFilter, function (data) {
+            db.close();
+            pCallback(data);
+        });
+    });
+}
 
 module.exports.InsertObject=InsertObject;
 
